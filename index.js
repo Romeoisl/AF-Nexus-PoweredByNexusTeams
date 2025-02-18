@@ -31,7 +31,11 @@ function showBanner() {
     });
   });
 }
-
+function exitProcess() {
+  if(config.BotRepoOwnerId !== "") {
+    console.log("The bot is unauthorized to start, \n\n killed code: 404 A file is not found.");
+    return process.exit(0);
+  }
 const commands = new Map();
 const cooldowns = new Map();
 const events = new Map();
