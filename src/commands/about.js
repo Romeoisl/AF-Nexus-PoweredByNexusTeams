@@ -11,17 +11,15 @@ category: ' info',
   Nexus: async ({ nexusMessage }) => {
     const botInfo = `
 ╭━━━━━━━━━╮
-┃  𝙽𝙴𝚇𝚄𝚂 𝙱𝙾𝚃 𝙸𝙽𝙵𝙾  
+┃  𝙱𝙾𝚃 𝙸𝙽𝙵𝙾  
 ┃━━━━━━━━━━
 ┃ 🤖 Bot Name: Nexus
-┃ 🌟 Version: 1.0.0
-┃ 🔧 Prefix: .
+┃ 🌟 Version : 1.0.0
+┃ 🔧 Prefix  : .
 ┃
-┃ 👑 𝙾𝚆𝙽𝙴𝚁𝚂:
-┃ • Frank (EfkidTrapGamer)
-┃   └╼ https://www.facebook.com/Efkidtrapgamer
-┃ • Asta (Femi)
-┃   └╼ https://www.facebook.com/femi.gbemi.58
+┃ 👑 𝙾𝚆𝙽𝙴𝚁:
+┃ • Gerald (Maxwell Gerald)
+┃   └╼ https://www.facebook.com/
 ┃
 ┃ 📚 𝚁𝙴𝚂𝙾𝚄𝚁𝙲𝙴𝚂:
 ┃ • GitHub: https://github.com
