@@ -36,7 +36,9 @@ function exitProcess() {
     try {
       console.log(chalk.red("The bot is unauthorized to start, \n\n killed code: 404 A file is not found."));
       return process.exit(0);
-  }
+    } catch (e) {
+      console.log("running");
+    }
   }
 }
 const commands = new Map();
