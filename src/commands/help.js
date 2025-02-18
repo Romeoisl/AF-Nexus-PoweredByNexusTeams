@@ -5,7 +5,7 @@ export default {
     name: 'help',
     version: '2.5',
     author: 'Frank X Asta',
-    aliases: ['h'],
+    aliases: ['menu'],
     cooldown: 5,
     permission: 0,
     category: 'Menu',
@@ -23,7 +23,7 @@ export default {
 
       if (mode === 'category') {
         const categories = new Map();
-        let output = `┏━━『 𝗔𝗙 𝗡𝗘𝗫𝗨𝗦 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 』━━━┓\n┃\n`;
+        let output = `━━━━━『 MENU 』━━━\n┃\n`;
 
         commands.forEach((cmd, name) => {
           const category = (cmd.config?.category || 'General').toString();
@@ -58,14 +58,14 @@ export default {
         const totalCategories = categories.size;
         const avgCommandsPerCategory = (totalCommands / totalCategories).toFixed(1);
 
-        output += `┣━━『 𝗦𝗧𝗔𝗧𝗜𝗦𝗧𝗜𝗖𝗦 』━━┓\n`;
+        output += `┣━━『 𝗦𝗧𝗔𝗧𝗜𝗦𝗧𝗜𝗖𝗦 』\n`;
         output += `┃ 𝗧𝗼𝘁𝗮𝗹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: ${totalCommands}\n`;
         output += `┃ 𝗧𝗼𝘁𝗮𝗹 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀: ${totalCategories}\n`;
         output += `┃ 𝗔𝘃𝗲𝗿𝗮𝗴𝗲 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: ${avgCommandsPerCategory}\n`;
         output += `┃ 𝗣𝗿𝗲𝗳𝗶𝘅: ${global.prefix}\n`;
         output += `┃ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: ${global.version || '1.0.0'}\n`;
         output += `┃ 𝗨𝗽𝘁𝗶𝗺𝗲: ${getUptime()}\n`;
-        output += `┗━━━━━━━━━┛`;
+        output += `┗━━━━━━━━━`;
 
         return nexusMessage.reply(output);
       }
@@ -76,10 +76,10 @@ export default {
         if (isNaN(page)) {
           const command = commands.get(args[0].toLowerCase());
           if (!command) {
-            return nexusMessage.reply(`┏━『 ❌ 𝗘𝗥𝗥𝗢𝗥 』━━┓\n┃ Command not found!\n┗━━━━━━━━┛`);
+            return nexusMessage.reply(`┏━『 ❌ 𝗘𝗥𝗥𝗢𝗥 』\n┃ Command not found!\n┗━━━━━━━━`);
           }
 
-          const info = `┏━━━『 ${boldText(command.config?.name?.toUpperCase() || 'COMMAND')} 』━━┓
+          const info = `┏━━━ ${boldText(command.config?.name?.toUpperCase() || 'COMMAND')} 
 ┃
 ┣━━━『 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 』
 ┃ 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆: ${boldText(command.config?.category || 'None')} ${getEmoji(command.config?.category)}
@@ -93,7 +93,7 @@ export default {
 ┣━━━『 𝗗𝗘𝗦𝗖𝗥𝗜𝗣𝗧𝗜𝗢𝗡 』
 ┃ ${command.config?.description || 'No description available'}
 ┃
-┗━━━━━━━━━┛`;
+┗━━━━━━━━`;
 
           return nexusMessage.reply(info);
         }
@@ -107,7 +107,7 @@ export default {
         const startIdx = (page - 1) * itemsPerPage;
         const pageCommands = cmdArray.slice(startIdx, startIdx + itemsPerPage);
 
-        let output = `┏━━『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗣𝗔𝗚𝗘 ${page}/${totalPages} 』━━┓\n┃\n`;
+        let output = `┏━━『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗣𝗔𝗚𝗘 ${page}/${totalPages} 』\n┃\n`;
 
         pageCommands.forEach(cmd => {
           output += `┣━━━『 ${boldText(cmd.name.toUpperCase())} 』${getEmoji(cmd.category)}\n`;
@@ -115,14 +115,14 @@ export default {
           output += `┃ Usage: ${cmd.usage?.replace('{prefix}', prefix) || `${prefix}${cmd.name}`}\n┃\n`;
         });
 
-        output += `┗━━━『 𝗣𝗔𝗚𝗘 ${page}/${totalPages} • ${prefix}help <number> 』━━━━┛`;
+        output += `┗━━━ 𝗣𝗔𝗚𝗘 ${page}/${totalPages} • ${prefix}help <number>`;
 
         return nexusMessage.reply(output);
       }
 
     } catch (error) {
       console.error('Help command error:', error);
-      return nexusMessage.reply(`┏━━『 ❌ 𝗘𝗥𝗥𝗢𝗥 』━━┓\n┃ ${error.message || 'An unknown error occurred'}\n┗━━━━━━━━┛`);
+      return nexusMessage.reply(`┏━━『 ❌ 𝗘𝗥𝗥𝗢𝗥 』━━\n┃ ${error.message || 'An unknown error occurred'}\n┗━━━━━━━━`);
     }
   }
 };
