@@ -31,16 +31,7 @@ function showBanner() {
     });
   });
 }
-function exitProcess() {
-  if(config.BotRepoOwnerId !== "") {
-    try {
-      console.log(chalk.red("The bot is unauthorized to start, \n\n killed code: 404 A file is not found."));
-      return process.exit(0);
-    } catch (e) {
-      console.log("running");
-    }
-  }
-}
+
 const commands = new Map();
 const cooldowns = new Map();
 const events = new Map();
@@ -262,7 +253,6 @@ console.log(gradient.pastel(`${separator} ${message} ${separator}`));
 const systemLog = (message) => {
 console.log(gradient.pastel(`[ SYSTEM ] ${message}`));
 };
-exitProcess();
 // Call the systemLog function
 systemLog('Starting up Nexus...');
 // Call the logSeparator function
