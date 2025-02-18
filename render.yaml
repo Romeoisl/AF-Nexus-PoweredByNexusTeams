@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nexus
+    name: nexus-improvement
     env: node
     build:
       context: .
