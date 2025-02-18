@@ -1,23 +1,21 @@
 export default {
-  "botName": "Nexus",
-  "prefix": ".",
-  "nickname": "Nexusbot",
-  "adminIds": [
-    "100062160914296",
-    "61557780285734",
-    "100075528791428",
-    "61571509256532"
-  ],
+  "botName": "Mateo Chatbot",
+  "prefix": "?",
+  "nickname": "Mateo",
+  "BotRepoOwnerID": "", // do not change, or else bot will not work
+  "adminIds": [],
+  "operatorsIDs": [],
+  "wmaitainListIds": [],
   "facebookAccount": {
-    "email": "bultelakku@gufum.com",
-    "password": "asta@0123"
+    "email": "",
+    "password": ""
   },
   "logging": {
     "messageObjects": true
   },
   "language": "en",
   "autoRestart": {
-    "time": null
+    "time": 83600000
   },
   "optionsFca": {
     "forceLogin": true,
